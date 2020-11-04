@@ -1,0 +1,7 @@
+.outer {
+    padding: 0 19px;
+    height: 200px;
+    background-color: azure;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
