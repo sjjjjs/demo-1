@@ -1,34 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
-import Box from './component/MessageFlow/box';
+import { useState } from 'react';
+import MessageFlow from './component/MessageFlow/index';
+import MessageTool from './component/MessageTool/index';
+import styles from './app.module.css';
 
 function App() {
-  const [list, setList] = useState([]);
-  useInterval(() => {
-    setList([...list, <div key={Date.now()}>hello {Date.now()}</div>])
-  }, 150);
+  const [messages, setMessages] = useState([]);
+  const appendMessage = m => setMessages(r => [...r, m]);
   return (
-    <Box>{list}</Box>
+    <div className={styles.box}>
+        <div className={styles.messageBox}>
+          <MessageFlow messages={messages} autoScroll={true} />
+        </div>
+        <div className={styles.actionBox}>
+          <MessageTool onMessage={appendMessage} />
+        </div>
+    </div>
   );
 }
 
 export default App;
-
-const useInterval = (callback, delay) => {
-  const savedCallback = useRef();
-
-  // 保存新回调
-  useEffect(() => {
-      savedCallback.current = callback;
-  });
-
-  // 建立 interval
-  useEffect(() => {
-      function tick() {
-          savedCallback.current();
-      }
-      if (delay !== null) {
-          let id = setInterval(tick, delay);
-          return () => clearInterval(id);
-      }
-  }, [delay]);
-}

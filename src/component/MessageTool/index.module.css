@@ -1,0 +1,9 @@
+
+.box {
+    padding: 10px;
+}
+.primary {
+    background-color: dodgerblue;
+    color: aliceblue;
+    border: none;
+}

@@ -1,0 +1,17 @@
+
+.box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.messageBox {
+    width: 70%;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.actionBox {
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+}

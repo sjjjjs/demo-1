@@ -1,0 +1,94 @@
+
+.systemMessageBox {
+    margin: 10px auto;
+    max-width: 50%;
+    text-align: center;
+}
+.systemMessageText {
+    display: inline-block;
+    font-size: 12px;
+    padding: 1px 18px;
+    color: #b2b2b2;
+    border-radius: 2px;
+}
+
+.baseMessageBox {
+    display: flex;
+    margin-bottom: 16px;
+}
+.baseMessageBox.baseMessageLtr {
+    flex-direction: row;
+}
+.baseMessageBox.baseMessageRtl {
+    flex-direction: row-reverse;
+}
+
+.baseAvatarMessageBoxImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.textMessageBox {
+    text-align: left;
+    font-size: 16px;
+}
+.textMessageContent {
+    display: inline-block;
+    max-width: 500px;
+    min-height: 1em;
+    vertical-align: top;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 10px;
+    padding: 9px 13px;
+    word-break: break-all;
+    line-height: 1.6;
+}
+
+.textMessageContent.textMessageContent.textMessageContentReceive {
+    background-color: #ffffff;
+}
+.textMessageContent.textMessageContent.textMessageContentSent {
+    background-color: #b2e281;
+}
+.textMessageContent.textMessageContentSent::after {
+    content: " ";
+    left: 100%;
+    top: 14px;
+    position: absolute;
+    border: 6px solid transparent;
+    border-left-width: 4px;
+    border-left-color: #b2e281;
+}
+.textMessageContent.textMessageContentReceive::before {
+    content: " ";
+    left: -10px;
+    top: 14px;
+    position: absolute;
+    border: 6px solid transparent;
+    border-right-width: 4px;
+    border-right-color: #ffffff;
+}
+
+
+.imageMessageBox {
+    margin: 0 10px;
+}
+.imageMessageContent {
+    display: inline-block;
+}
+.imageMessageImg {
+    max-width: 350px;
+    max-height: 240px;
+    cursor: pointer;
+    background-color: #c3c3c3;
+    border-radius: 3px;
+    overflow: hidden;
+}
